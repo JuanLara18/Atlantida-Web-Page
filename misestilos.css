@@ -1,0 +1,207 @@
+@charset "UTF-8"; /* Definimos el tipo de caracteres que vamos a usar, en este caso los del idioma español */
+
+/* Importamos la librería que nos brinda la universidad */
+@font-face { 
+    font-family: Ancizar Sans-regular; /* Definimos el tipo de letra que importamos */
+    src: url('fonts/Ancizar Sans-Regular.otf'); /* Damos la ubicación del archivo donde se importará el tipo de letra */
+} 
+
+*{
+    font-family: Ancizar Sans-regular; /* Definimos la fuente de todos los elementos del documento que lleven texto */
+}
+
+/* Creamos el estilo para el cuerpo del documento */
+body { 
+	background-color:#031e52; /* Fondo de pantalla - EL COLOR */
+	background-image: url(imagenes/Fondo2.jpg); /* Fondon de pantalla - LA IMAGEN que es lo que se va a terminar viendo de fondo */
+	background-repeat: repeat; /* Decimos que se repita la imagen en 'x' y 'y' */
+	min-width: 200px; /* Definimos un mínimo de ancho */
+	font-weight: 390; /* Tamaño de letra */
+	height: 3em;
+	line-height: 3em;
+    text-decoration-color: aliceblue; /* Color del texto */
+}
+
+/* Hacemos las que llamamos fichas en los docuemtnso HTML */
+div{
+    background-color:rgba(35, 42, 46, 0.37); /* Damos un color de fondo */
+    padding:20px; /* Determinamos la distancia hacia todos los lados (der, izq, arri, abaj) en la caja de 'información' */
+    margin: 4px; /* Establecemos una margen */
+}
+
+/* Hacemos el estilo de los vínculos */
+a:link {
+	color: #e7e7e7; /* Definimos el color del texto */
+	text-decoration:none; /* Establecemos no decorar el texto para así evitar que se subraye */
+}
+a:hover { /* Cuando tenemos el mouse sobre el vínculo */
+	color: #4d8291;
+	border-bottom-color: transparent;
+}
+
+/* Hacemos el estilo del botón a usar */
+.boton1{
+    background-color: #e7e7e7; /* Palabra */
+    border-radius: 7px; /* Redondeamos las puntas */
+	border: 2px; /* El tamaño del borde del botón */
+	color: #124672; /* Color del texto en el botón */
+	cursor: crosshair; /* Cambiamos el cursor */
+	display: inline-block;
+	font-weight: 400;
+	height: 3em;
+	line-height: 3em;
+	padding: 0 2em;
+	text-align: center;
+	text-decoration: none;
+    font-size: 19px;
+    width: auto;
+    margin:3px;
+}
+
+/* Cuando ubicamos el mouse sobre el botón este: */
+.boton1:hover {
+	color:#54b9de; /* Cambiará de color el texto */
+	text-shadow: 1px 1px #ffffff;/* Agregamos una sombra */
+	cursor:crosshair; /* Definimos un cursor diferente */
+}
+
+/* Textos */
+h1{ /* Títulos principales */
+	color:white; /* Color blanco */
+	font-size: 36px; /* Tamaño de la letra */
+	font-weight: bold; /* negrilla */
+	text-decoration: none; /* Sin decoración */
+	text-shadow: 1px 1px #000000; /* Poco de sombre */
+	text-align: center;
+	max-width: 640px;
+	margin:auto; /* MArgen automatica */
+	margin-bottom:10px;
+}
+p{ /* Párrafos */
+    color: aliceblue; /* Establecemos el color */
+    text-align: justify; /* Justificamos el texto */
+    line-height: 30px;
+}
+h2, h3{
+    color: cornsilk;
+    margin-left: 20px;
+}
+span{ /* Textos */
+    font-size: 35px; /* Tamaño de la letra */
+}
+
+strong{ /* Tipo de texto especial, la idea es que reselte y en el documento es usado para la primera letra de cada parrafo luego del título */
+    font-size: 22px; /* Tamaño de la letra */
+}
+
+/* Estilo de las tablas */
+table{ 
+    table-layout: auto; 
+    column-width: auto; /* Tamaño automatico de las columnas */
+    justify-content: center; /* Centramos el contenido de las tablas */
+}
+th { /* Textos */
+	color: #ffffff;;
+	font-weight: normal;
+	text-align: center;
+	padding: 5px;
+	border-style:none;
+	border-color: #663399;
+}
+td {
+	background-color: #3333FF;
+	color: #DDDDFF;
+	padding: 10px;
+}
+
+/* Estilo usado en l pie de página */
+.pie{
+    margin: none;
+    background-color: rgba(35, 42, 46, 0.13);
+    position: static;
+    padding: 8px;
+    margin: 1px;
+}
+
+/* Listas */
+ul{
+    list-style-type: cambodian;
+    color: aliceblue;
+}
+dd{
+    line-height: 120%;
+    text-align: justify;
+}
+
+/* Responsive */
+@media only screen and (max-width: 780px) { /* Cuando la pantalla no supera los 780 pixeles de ancho */
+
+    body{
+        font-size: smaller; /* Hacemos la letra más pequeña */
+        background-image: url(imagenes/Fondo3.jpg); /* Cambiamos el fondo */
+    }
+    
+    .boton1{
+        font-size: 13px; /* Cambiamos el tamaño de la letra por una menor para acomodar mejor la información */
+        resize: inline;
+        width: auto;
+        margin: 3px;
+    }
+
+    div{
+        background-color:rgba(35, 42, 46, 0.37);
+        padding:10px;
+        margin: 3px;
+    }
+    
+    img{ /* Estilo de las imágenes para hacer que su tamaño varie de forma automática */
+        max-width:100%;      /* Aquí el tamaño máximo de tus imágenes */
+        height:auto;         /* No es necesario, sólo para clarificar */
+    }
+    
+    td, th{
+        padding: 4px; /* Reducimos el espacio entre la información dentro de las tabla y su borde */
+    }
+
+
+}
+
+@media only screen and (max-width: 480px) { /* Cuando la pantalla no supera los 480 pixeles */
+    
+    body{
+        font-size: smaller; /* Seguimos con la letra encogida */
+        background-image: url(imagenes/Fondo4.jpg); /* Cambiamos el fondo */
+    }
+    
+}
+
+#mapid {
+    
+    height: 880px;    
+}
+
+    #map {
+        width:90%;
+        height:90%;
+        color: #CCC;
+        background: #EFEFEF;
+        align-content: center;
+}
+
+span.loading {
+        display: block;
+        text-align: center;
+        font: 300 italic 72px/400px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", sans-serif;
+    }
+
+loading{
+    margin: 10px;;
+    padding: 20px;
+    
+}
+
+.MapaInteractivo{
+    margin: 30px;
+    padding: 20px;
+    align-items: center;
+}

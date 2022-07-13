@@ -1,0 +1,154 @@
+<!doctype html>
+<!-- Ejercicio 1 de la materia Grafica interactiva por Juan David Lara Camacho -->
+<html lang="es"> <!-- Declaramos el lenguaje en idioma español -->
+	<head> <!-- Iniciamos la cabeza dada por la estructura DOM -->
+		<!-- Incluimos una etiqueta tipo meta que nos permita: -->
+		<meta charset="UTF-8">		<!-- Utilizar caracteres del idioma español -->
+		<meta name="description" content="Atlántida">		<!-- Darle una descripcion al sitio web -->
+		<meta name="keywords" content="Atlántida, Ficción">		<!-- Darle unas palabras claves para facilitar su busqueda -->
+		<!-- Definimos la relacion de este archivo HTML con la hoja de estilos -->
+        <meta name="viewport" content="width=device-width; initial-scale=1.0"> <!-- Definimos la escala de la pagina en un 100% para evitar inconvenientes con el navegador -->
+		<!--<link href="misestilos.css" rel="stylesheet">-->
+        <link href="misestilos.css" rel="stylesheet">
+        
+        
+        <script src="js/phaser.js"></script> <!-- Importamos la libreria de Phaser -->
+        <script src="js/mapa.js"></script> <!-- Importamos el script donde se encuentra programado el mapa interactivo -->
+    
+        <style>
+			html, body {
+				height: 100%;
+				margin: 0;
+				padding: 0;
+            }
+        </style>
+	</head>
+    
+    
+	<body>
+        <div> <!-- Creamos la ficha que ocupará la parte superior con el logo que representará el titulo y la barra de navegación con los botones -->
+            <header> <!-- Ponemos el logotipo de la Atlantida centrado-->
+                <center> 
+                    <a href="index.html" margin="auto"><img src="imagenes/LogoAtlantida.png" alt="Logotipo de la Atlántida"></a>
+                </center>
+            </header>
+            <!-- Hacemos la barra de navegación donde van los botones -->
+		  <nav>
+            <center> <!-- Centramos el conjunto de los botones -->
+                <!-- Definimos la clase boton1 para los botones y serán vinculos que se abrirán en la misma página -->
+                <a href="historia.html" target="_self"><button class="boton1">Historia</button></a> 
+                <a href="ubicacion.html" target="_self"><button class="boton1">Ubicación</button></a>
+                <a href="habitantes.html" target="_self"><button class="boton1">Habitantes</button></a>
+                <a href="actividades.html" target="_self"><button class="boton1">Actividades</button></a>
+                <a href="datoscuriosos.html" target="_self"><button class="boton1">Datos Curiosos</button></a>
+                <a href="mapa.html" target="_self"><button class="boton1">Mapa</button></a>
+                <a href="creditos.html" target="_self"><button class="boton1">Créditos</button></a> 
+            </center>
+		  </nav>
+        </div>
+
+            <h1></br>Mapa interactivo de la Atlantida.</br></h1>
+    
+    <h2>El siguiente es la recreación de la ciudad de la Atlantida, realizada por Ubisoft en colaboración con grandes historiadores. </br> Puede dar click en los lugares señalados para ver imagenes reacreadas en dicho luchar y para dejar de ver la imagen dar click en la parte superior derecha en el botón en caso de no ser así favor recargar la página.</h2>
+
+    <div id="mapa" class="MapaInteractivo"></div> <!-- Div en el que ubicaremos el mapa interactivo realizado con Phaser -->
+
+    <style> div{background: none} </style> <!-- Quitamos el fondo en el estilo div para no tener inconvenientes con el mapa interactivo al momento de cargar las imagenes -->
+
+    <h2>El siguiente apartado requiere acceso a internet para poder visualizarlo. Puede desplazarse en el mapa, hacer zoom y conocer mejor la maravillosa ciudad de la Atlantida.</h2>
+
+    <center style="height: 550px;">
+        <div id="map"><span class="loading"><span>Cargando pagina...</br>Verifique el acceso a internet</span></div>
+    </center>
+
+		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script> <!-- Importamos la libreria que usaremos en este apartado, en este caso es un api de google maps razon por la cual se requiere acceso a internet. -->
+		
+        <script>
+				var repeatOnXAxis = false; //No repetimos la imagen en el eje x
+
+				function getNormalizedCoord(coord, zoom) { //Creamos una funcion que nos permite normalizar las coordenadas, esto para poder hacer zoom
+					if (!repeatOnXAxis) return coord;
+
+                    // Declaramos las variables de las posiciones
+					var y = coord.y;
+					var x = coord.x;
+
+					// Definimos un rango dependiendo del zoom que se esté haciendo, este puede ir de 0 a 4 enfocandonos en el centro del mapa
+					var tileRange = 1 << zoom;
+
+					// Que no se repita verticalemente
+					if (y < 0 || y >= tileRange) {
+						return null;
+					}
+
+					// Que se repita en el eje X
+					if (x < 0 || x >= tileRange) {
+						x = (x % tileRange + tileRange) % tileRange;
+					}
+
+					return {
+						x: x,
+						y: y
+					};
+
+				}
+
+            // Corazón del codigo brindado por los desarrolladores de Google de libre uso e importado para el desarrollo del mapa interactivo
+
+				window.onload = function() { // Cargamos las pantalla, como crear un Canvas
+
+					// Definimos nuestro tipo de mapa
+					var customMapType = new google.maps.ImageMapType({ //Declaramos la varible que sera el mapa
+						getTileUrl: function(coord, zoom) { //Llamamos la funcion antes declarada
+							var normalizedCoord = getNormalizedCoord(coord, zoom);
+							if(normalizedCoord && (normalizedCoord.x < Math.pow(2, zoom)) && (normalizedCoord.x > -1) && (normalizedCoord.y < Math.pow(2, zoom)) && (normalizedCoord.y > -1)) {
+								return zoom + '/' + normalizedCoord.x + '/' + normalizedCoord.y + '.png';
+							} else {
+								return 'descarga.jpeg';
+							}
+						},
+						tileSize: new google.maps.Size(256, 256),
+						maxZoom: 6,
+						name: 'PS_Bramus.GoogleMapsTileCutter'
+					});
+
+					// Opciones básicas de nuestro mapa
+					var myOptions = {
+						center: new google.maps.LatLng(0, 0),
+						zoom: 2,
+						minZoom: 0,
+						streetViewControl: false,
+						mapTypeControl: false,
+						mapTypeControlOptions: {
+							mapTypeIds: ["custom"]
+						}
+					};
+
+					// Iniciamos el mapa en la pagina web
+					var map = new google.maps.Map(document.getElementById('map'), myOptions);
+					map.mapTypes.set('custom', customMapType);
+					map.setMapTypeId('custom');
+
+				}
+		</script> <!-- Finalizamos el codigo en java script en este documento HTML -->
+
+        <center> <!-- Creamos el botón para ir arriba en la pagina sin tener que hacer scroll -->
+            <a href="#top"><img src="imagenes/BotonArriba.png" alt="Boton para ir arriba" width="40px" height="40px"></a> Ir Arriba
+        </center>
+
+        <!-- Creamos lo que se conoce como el pie de página -->
+        <footer class="pie" style="background-color: rgba(35, 42, 46, 0.37);"> <!-- Nos referimos con Footer a la ubicación en el documento que corresponde a la parte inferior y le definomos la clase pie -->
+            <center> <!-- Centramos el contenido que mostraremos -->
+                <div>
+                    <table> <!-- Organizamos de nuevo con una tabla -->
+                        <tr>
+                            <th> OBJETIVO DE LA PÁGINA:<br>La pagina web esta diseñada con fines educativos.</th>
+                            <th> CREADOR:<br>Juan David Lara Camacho</th>
+                            <th> CONTACTO:<br><a href="mailto:Jlara@unal.udu.co">Jlara@unal.edu.co</a></th>
+                        </tr>
+                    </table>
+                </div>
+            </center>
+        </footer>
+	</body> <!-- Finalizamos el cuerpo -->
+</html> <!-- Finaliza el documento -->

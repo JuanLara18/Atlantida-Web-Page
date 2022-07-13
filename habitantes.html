@@ -1,0 +1,78 @@
+<!doctype html>
+<!-- Ejercicio 1 de la materia Grafica interactiva por Juan David Lara Camacho -->
+<html lang="es"> <!-- Declaramos el lenguaje en idioma español -->
+	<head> <!-- Iniciamos la cabeza dada por la estructura DOM -->
+		<!-- Incluimos una etiqueta tipo meta que nos permita: -->
+		<meta charset="UTF-8">		<!-- Utilizar caracteres del idioma español -->
+		<meta name="description" content="Atlántida">		<!-- Darle una descripcion al sitio web -->
+		<meta name="keywords" content="Atlántida, Ficción">		<!-- Darle unas palabras claves para facilitar su busqueda -->
+		<!-- Definimos la relacion de este archivo HTML con la hoja de estilos -->
+		<link href="misestilos.css" rel="stylesheet">
+	</head>
+	<body>
+        <div> <!-- Creamos la ficha que ocupará la parte superior con el logo que representará el titulo y la barra de navegación con los botones -->
+            <header> <!-- Ponemos el logotipo de la Atlantida centrado-->
+                <center> 
+                    <a href="index.html" margin="auto"><img src="imagenes/LogoAtlantida.png" alt="Logotipo de la Atlántida"></a>
+                </center>
+            </header>
+            <!-- Hacemos la barra de navegación donde van los botones -->
+		  <nav>
+            <center> <!-- Centramos el conjunto de los botones -->
+                <a href="historia.html" target="_self"><button class="boton1">Historia</button></a> 
+                <a href="ubicacion.html" target="_self"><button class="boton1">Ubicación</button></a>
+                <a href="habitantes.html" target="_self"><button class="boton1">Habitantes</button></a>
+                <a href="actividades.html" target="_self"><button class="boton1">Actividades</button></a>
+                <a href="datoscuriosos.html" target="_self"><button class="boton1">Datos Curiosos</button></a>
+                <a href="mapa.html" target="_self"><button class="boton1">Mapa</button></a>
+                <a href="creditos.html" target="_self"><button class="boton1">Créditos</button></a> 
+            </center>
+		  </nav>
+        </div>
+        <!-- Creamos la tabla que nos permitirá organizar la información de forma deseada, en cada apartado realizamos unas divisiones para hacerlo ver como una ficha -->
+        <table>
+            <tr>
+                <th>
+                    <div> <!-- Hacemos una ficha -->
+                        <h2>ATLANTES</h2> <!-- Ponemos un título -->
+                        <p> <!-- Creámos un párrafo -->
+                            <span>&nbsp;&nbsp;&nbsp;E</span>l análisis de la leyenda de la Atlántida da para hablar de historia y geología extensamente, así como del difusionismo, la idea de que cada descubrimiento de la Antigüedad se hizo una vez y luego se propagó desde el foco originario al resto de la Humanidad, algo que no ocurrió en casos como los de la agricultura, la ganadería y, por poner un ejemplo atlante, la construcción de pirámides. Otros misterios nos pueden enseñar astronomía -el ejemplo más claro son las visitas extraterrestres-, psicología -las visiones de fantasmas-, la biología -¿sacamos a pasear al Yeti o a Nessie?-, cómo se manipula la historia por intereses políticos y religiosos -el Antiguo Testamento aúna ambos objetivos- y el auténtico ingenio de nuestros antepasados, en muchos casos víctimas del racismo de los partidarios de la teoría de los alienígenas ancestrales, para quienes las antiguas culturas no europeas precisaron de la ayuda de extraterrestres a la hora de levantar obras que todavía hoy nos asombran. No, nuestros antepasados eran antiguos; no tontos. Y los atlantes no forman parte de ellos, aunque su ficticia historia nos enseñe muchas cosas.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="imagenes/GigantesA.jpg" alt="Gigantes de la Atlantida" height="400px" width="600px">
+                        <br>Gigantes de la Atlantida <!-- Texto debajo de la imagen explicado lo que hay en la imágen -->
+                    </div>
+                </th>
+                <th>
+                    <div>
+                        <img src="imagenes/Atlantianos.jpg" alt="Recreacion los habitantes de la atlantida" height="800px" width="600px">
+                        <br>Recreacion los habitantes de la atlantida
+                    </div>
+                </th>
+            </tr>
+        </table>
+        <div>
+            <h3> <!-- Mayor información -->
+                Para mayor informacion dirigase a: <a href="https://culturacientifica.com/2014/01/13/lo-que-nos-ensenan-los-atlantes/" target="_blank" style="color: #a3ffff">Lo que nos enseñan los atlantes</a>
+            </h3>
+        </div>
+        <center> <!-- Botón para ir arriba de la página -->
+            <a href="#top"><img src="imagenes/BotonArriba.png" alt="Boton para ir arriba" width="40px" height="40px"></a> Ir Arriba
+        </center>
+        <!-- Creamos lo que se conoce como el pie de página -->
+        <footer class="pie"> <!-- Nos referimos con Footer a la ubicación en el documento que corresponde a la parte inferior y le definomos la clase pie -->
+            <center> <!-- Centramos el contenido que mostraremos -->
+                <div>
+                    <table> <!-- Organizamos de nuevo con una tabla -->
+                        <tr>
+                            <th> OBJETIVO DE LA PÁGINA:<br>La pagina web esta diseñada con fines educativos.</th>
+                            <th> CREADOR:<br>Juan David Lara Camacho</th>
+                            <th> CONTACTO:<br><a href="mailto:Jlara@unal.udu.co">Jlara@unal.edu.co</a></th>
+                        </tr>
+                    </table>
+                </div>
+            </center>
+        </footer>
+	</body> <!-- Finalizamos el cuerpo -->
+</html> <!-- Finaliza el documento -->

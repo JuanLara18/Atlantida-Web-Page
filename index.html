@@ -1,0 +1,79 @@
+<!doctype html>
+<!-- Ejercicio 1 de la materia Grafica interactiva por Juan David Lara Camacho -->
+<html lang="es"> <!-- Declaramos el lenguaje en idioma español -->
+	<head> <!-- Iniciamos la cabeza dada por la estructura DOM -->
+		<!-- Incluimos una etiqueta tipo meta que nos permita: -->
+		<meta charset="UTF-8">		<!-- Utilizar caracteres del idioma español -->
+		<meta name="description" content="Atlántida">		<!-- Darle una descripcion al sitio web -->
+		<meta name="keywords" content="Atlántida, Ficción">		<!-- Darle unas palabras claves para facilitar su busqueda -->
+		<!-- Definimos la relacion de este archivo HTML con la hoja de estilos -->
+		<link href="misestilos.css" rel="stylesheet">
+	</head>
+	<body>
+        <div> <!-- Creamos la ficha que ocupará la parte superior con el logo que representará el titulo y la barra de navegación con los botones -->
+            <header> <!-- Ponemos el logotipo de la Atlantida centrado-->
+                <center> 
+                    <a href="index.html" margin="auto"><img src="imagenes/LogoAtlantida.png" alt="Logotipo de la Atlántida"></a>
+                </center>
+            </header>
+            <!-- Hacemos la barra de navegación donde van los botones -->
+		  <nav>
+            <center> <!-- Centramos el conjunto de los botones -->
+                <!-- Definimos la clase boton1 para los botones y serán vinculos que se abrirán en la misma página -->
+                <a href="historia.html" target="_self"><button class="boton1">Historia</button></a> 
+                <a href="ubicacion.html" target="_self"><button class="boton1">Ubicación</button></a>
+                <a href="habitantes.html" target="_self"><button class="boton1">Habitantes</button></a>
+                <a href="actividades.html" target="_self"><button class="boton1">Actividades</button></a>
+                <a href="datoscuriosos.html" target="_self"><button class="boton1">Datos Curiosos</button></a>
+                <a href="mapa.html" target="_self"><button class="boton1">Mapa</button></a>
+                <a href="creditos.html" target="_self"><button class="boton1">Créditos</button></a> 
+            </center>
+		  </nav>
+        </div>
+        <!-- Creamos la tabla que nos permitirá organizar la información de forma deseada, en cada apartado realizamos unas divisiones para hacerlo ver como una ficha -->
+        <table>
+            <tr>
+                <th>
+                    <div>
+                        <!-- Colocamos la imagen con un tamaño definido -->
+                        <img src="imagenes/Poseidon.jpg" alt="Imagen de Poseidon en las ruinas de la atlantida" width="510px" heigth="510px">
+                        <br>Poseidon en las ruinas de la atlándita. <!-- Colocamos un texto debajo de la imagen -->
+                    </div>
+                </th> 
+                <th> <!-- Hacemos una nueva columna sobre la primer fila -->
+                    <h1>Bienvenido a la Atlántida, isla mítica de la cual mucho se ha hablado y poco se sabe.</h1>
+                </th>
+            </tr>
+            <tr> <!-- Nos ubicamos ahora en la segunda fila -->
+                <th>
+                    <h2>En el menú de navegación puedes encontrar diversos temas sobre la Atlántida.</h2>
+                </th>
+                <th>
+                    <div>
+                        <img src="imagenes/Atlantida1.jpg" alt="Imagen de la atlantida"> <!-- Colocamos una imagen -->
+                        <br>Recreacion de la ciudad de la Atlántida.
+                    </div>  
+                </th>
+            </tr>
+        </table> <!-- Finalizamos la tabla -->
+        <div> <!-- Creamos otra ficha -->
+            <p> <!-- Hacemos un texto introductorio en forma de parrafo donde colocaos la primera de todas las letras de forma especial y con unos espacios antes de la margen izquierda -->
+                <span>&nbsp;&nbsp;&nbsp;L</span>a mítica ciudad perdida conocida como la Atlántida, inmortalizada a partir de los Diálogos de Platón (“Timeo” y “Critias”), ha sido motivo de exhaustivos estudios y múltiples exploraciones que se han dado a la tarea no solo de confirmar su existencia, sino de definir su ubicación exacta. De acuerdo con el iniciado y gran filósofo griego, la Atlántida fue una lúcida potencia en algún momento de la historia humana, ubicada “frente a las Columnas de Heracles” (posiblemente el estrecho de Gibraltar) y que eventualmente desapareció sumergiéndose en el mar. Según algunas teorías, esto podría haber ocurrido durante el año 9,000 A.C. Dentro de las causas probables la versión histórica atribuye la caída de la Atlántida a un frustrado intento de conquistar Atenas, mientras que las versiones “menos ortodoxas” apuntan a una desvirtuación de su sociedad, razón por la cual recibieron una especie de castigo divino en forma de desastres naturales.
+            </p>
+        </div> <!-- Finalizamos la ficha -->
+        <!-- Creamos lo que se conoce como el pie de página -->
+        <footer class="pie"> <!-- Nos referimos con Footer a la ubicación en el documento que corresponde a la parte inferior y le definomos la clase pie -->
+            <center> <!-- Centramos el contenido que mostraremos -->
+                <div>
+                    <table> <!-- Organizamos de nuevo con una tabla -->
+                        <tr>
+                            <th> OBJETIVO DE LA PÁGINA:<br>La pagina web esta diseñada con fines educativos.</th>
+                            <th> CREADOR:<br>Juan David Lara Camacho</th>
+                            <th> CONTACTO:<br><a href="mailto:Jlara@unal.udu.co">Jlara@unal.edu.co</a></th>
+                        </tr>
+                    </table>
+                </div>
+            </center>
+        </footer>
+	</body> <!-- Finalizamos el cuerpo -->
+</html> <!-- Finaliza el documento -->
